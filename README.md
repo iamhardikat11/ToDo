@@ -32,8 +32,6 @@ A full-stack single-page CRUD web application where users can:
 * [Pug](https://pugjs.org/)
 * [Bootstrap](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
 
-# Deployed Site
-  https://todolist-mira.herokuapp.com/
 
 # Getting Started
 
