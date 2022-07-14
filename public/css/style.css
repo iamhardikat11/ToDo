@@ -1,0 +1,73 @@
+body {
+  width: 40%;
+  margin: 0 auto;
+}
+
+.container {
+  width: 80%;
+}
+
+input.form-control {
+  display: inline;
+  width: 90%;
+}
+
+.home {
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+.form-control {
+  font-style: italic;
+}
+
+.list-group-item {
+  overflow: hidden;
+}
+
+.list-group-item.hidden {
+  display: none;
+}
+
+.text-btn {
+  float: left;
+}
+
+.delete-btn {
+  float: right;
+}
+
+span.desciption {
+  display: inline;
+}
+
+.completeTask, .deleteTask, .undoComplete, #toggle-all {
+  color: white;
+}
+
+.toggle-all {
+  margin-bottom: 5px;
+}
+
+.deleteTask {
+  display: none;
+}
+
+.list-group-item:hover .deleteTask {
+  display: block;
+}
+
+div.filters {
+  margin: 0 auto;
+  width: 100%;
+  padding: 2%;
+}
+
+div.filters > a  {
+  margin: 0 10px;
+  font-size: 12px;
+}

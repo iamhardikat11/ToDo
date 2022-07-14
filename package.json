@@ -1,0 +1,42 @@
+{
+  "name": "todolist",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "db:init": "npm run db:create && npm run db:schema",
+    "db:create": "dropdb --if-exists todolistapp && createdb todolistapp",
+    "db:schema": "psql todolistapp < src/models/schema.sql",
+    "db:seed": "psql todolistapp < src/models/seed.sql",
+    "db:drop": "dropdb todolistapp",
+    "db:reset": "npm run db:drop && npm run db:create && npm run db:schema && npm run db:seed",
+
+    "test": "npm run test:db:reset && NODE_ENV=test mocha --recursive --exit",
+    "test:db:create": "NODE_ENV=test dropdb --if-exists todolistapp_test && createdb todolistapp_test",
+    "test:db:schema": "NODE_ENV=test psql todolistapp_test < src/models/schema.sql",
+    "test:db:seed": "NODE_ENV=test psql todolistapp_test < src/models/seed.sql",
+    "test:db:drop": "NODE_ENV=test dropdb todolistapp_test --if-exists",
+    "test:db:reset": "NODE_ENV=test npm run test:db:create && npm run test:db:schema && npm run test:db:seed"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.2",
+    "pg-promise": "^7.3.2",
+    "pug": "^2.0.0-rc.4"
+  },
+  "devDependencies": {
+    "ajv": "^5.5.1",
+    "chai": "^4.1.2",
+    "chai-http": "^3.0.0",
+    "eslint": "^4.12.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.5.1",
+    "mocha": "^4.0.1"
+  }
+}
